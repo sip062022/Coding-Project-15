@@ -1,0 +1,50 @@
+<!--Task 1: Create Base Structure-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>  <!--Adding header including the title-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Management Dashboard</title> <!--Adding the title-->
+</head>
+
+<!-- Adding in styles for header body, footer, employee container, and employee cards-->
+ 
+<style>
+    header {
+        font-family: Arial, sans-serif;
+         margin: 20px;
+         padding: 20px;
+         text-align: center;
+    }
+    
+    body { 
+         font-family: Arial, sans-serif;
+         margin: 20px;
+         padding: 20px;
+    } 
+
+</style>
+
+<body>
+    <header>
+        <h1>Risk Management Dashboard</h1>  <!--Adds a header-->
+    </header>
+
+    <main>
+        <div id="riskDashboard">  <!--Adds in risk items-->     
+        </div>
+
+        <form id="addRiskForm"></form> <!--Adds in the addRiskForm form-->
+        <label for="riskItem">Enter a Risk Item:</label> <!--label for the form is riskItem, text: Enter A Risk Item-->
+            <input type="text" id="riskItem" name="riskItem" required> <!--input id and name required inputs as type text-->
+            <button type="submit">Add Risk Item</button> <!--Adds a submit button-->
+        </form>
+    </div>
+
+    </main>
+
+    <script src="cc_15.js"></script> <!--Adds link to javascript file-->
+
+</body>
+</html>
