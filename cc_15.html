@@ -8,8 +8,8 @@
     <title>Risk Management Dashboard</title> <!--Adding the title-->
 </head>
 
-<!-- Adding in styles for header body, footer, employee container, and employee cards-->
- 
+<!-- Adding in styles for header, body, and risk card/info-->
+
 <style>
     header {
         font-family: Arial, sans-serif;
@@ -24,6 +24,27 @@
          padding: 20px;
     } 
 
+    #riskDashboard {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    .riskCard {
+        border: 1px solid #ccc;
+        padding: 20px;
+        margin: 25px 0;
+        border-radius: 5px;
+        background-color: #013220;
+        color: #ccc;
+        width: 300px;
+    }
+
+    .riskCard .riskLevel {
+        font-weight: bold;
+    }
+
+
 </style>
 
 <body>
@@ -32,14 +53,28 @@
     </header>
 
     <main>
+        <!--Task 1-->
+
         <div id="riskDashboard">  <!--Adds in risk items-->     
         </div>
 
-        <form id="addRiskForm"></form> <!--Adds in the addRiskForm form-->
-        <label for="riskItem">Enter a Risk Item:</label> <!--label for the form is riskItem, text: Enter A Risk Item-->
-            <input type="text" id="riskItem" name="riskItem" required> <!--input id and name required inputs as type text-->
-            <button type="submit">Add Risk Item</button> <!--Adds a submit button-->
+        <form id="addRiskForm"> <!--Adds in the addRiskForm form-->
+        <label for="riskName">Enter a Risk Item:</label> <!--label for the form is riskItem, text: Enter A Risk Item-->
+            <input type="text" id="riskName" name="riskName" required> <!--input id and name required inputs as type text-->
+
+        <label for="riskLevel">Risk Level:</label> <!--Adds labelling for the risk level-->
+            <select id="riskLevel" name="riskLevel" required> <!--Makes input required-->
+                <option value="Low">Low</option> <!--Creates dropdown option low-->
+                <option value="Medium">Medium</option> <!--Creates dropdown option medium-->
+                <option value="High">High</option> <!--Creates dropdown option high-->
+        </select>
+
+        <label for="department">Department:</label> <!--Adds labelling for department-->
+            <input type="text" id="department" name="department" required> <!--Makes input required-->
+
+        <button type="submit">Add Risk Item</button> <!--Adds a submit button-->
         </form>
+
     </div>
 
     </main>
