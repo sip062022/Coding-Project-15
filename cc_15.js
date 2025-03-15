@@ -19,9 +19,22 @@ function addRiskItem(riskName, riskLevel, department) { // adds in function to a
     departmentParagraph.textContent = `Department: ${department}`; // Logs the risk level
     departmentParagraph.classList.add('department'); // assigns class
 
+    // TASK 3: Adding Resolve Button //
+
+    const resolveButton = document.createElement('button'); // creates constant for the resolve button
+    resolveButton.textContent = 'Resolve'; // creates text label for the button
+        resolveButton.classList.add('resolveButton'); // Adds class
+
+    resolveButton.addEventListener('click', function() { // adds function to listen for click
+         riskDashboard.removeChild(riskCard);  // removes card when clicked
+    });
+
+    // End of Task 3 //
+
     riskCard.appendChild(riskNameHeader); // appends the riskNameHeader
     riskCard.appendChild(riskLevelParagraph); // appends the riskLevelParagraph
     riskCard.appendChild(departmentParagraph); // appends the departmentParagraph
+    riskCard.appendChild(resolveButton); // appends the resolve button
 
     riskDashboard.appendChild(riskCard); // appends the risk card
     } else {
@@ -44,4 +57,5 @@ function addRiskItem(riskName, riskLevel, department) { // adds in function to a
 
 addRiskItem("Data Breach", "High", "IT"); // test data
 addRiskItem("Supply Chain Disruption", "Medium", "Operations"); // test data
+addRiskItem("Market Fluctuations", "High", "Finance");
 
