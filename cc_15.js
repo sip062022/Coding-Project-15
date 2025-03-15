@@ -25,7 +25,8 @@ function addRiskItem(riskName, riskLevel, department) { // adds in function to a
     resolveButton.textContent = 'Resolve'; // creates text label for the button
         resolveButton.classList.add('resolveButton'); // Adds class
 
-    resolveButton.addEventListener('click', function() { // adds function to listen for click
+    resolveButton.addEventListener('click', function(event) { // adds function to listen for click
+        event.stopPropagation(); // stops propogation, TASK 6
          riskDashboard.removeChild(riskCard);  // removes card when clicked
     });
 
@@ -102,4 +103,4 @@ increaseRiskLevelsButton.classList.add('increaseRiskLevelsButton'); // adds the 
 
 increaseRiskLevelsButton.addEventListener('click', increaseRiskLevels);  // creates listener for the button
 
-riskDashboard.appendChild(increaseRiskLevelsButton); // appends the button
+document.body.appendChild(increaseRiskLevelsButton); // appends the button
