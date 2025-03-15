@@ -30,6 +30,18 @@ function addRiskItem(riskName, riskLevel, department) { // adds in function to a
     });
 
     // End of Task 3 //
+    
+    // Task 4: Categorizing Risks by Level //
+    
+    if (riskLevel === 'Low') {  // if low risk level
+        riskCard.style.backgroundColor = '#00FF00'; // green background color
+    } else if (riskLevel === 'Medium') {  // if medium risk level
+        riskCard.style.backgroundColor = '#FFFF00';  // yellow background color
+    } else if (riskLevel === 'High') { // if high risk level
+        riskCard.style.backgroundColor = '#FF0000';  // red background color
+    }
+
+    // End of Task 4 //
 
     riskCard.appendChild(riskNameHeader); // appends the riskNameHeader
     riskCard.appendChild(riskLevelParagraph); // appends the riskLevelParagraph
