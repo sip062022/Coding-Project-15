@@ -69,5 +69,37 @@ function addRiskItem(riskName, riskLevel, department) { // adds in function to a
 
 addRiskItem("Data Breach", "High", "IT"); // test data
 addRiskItem("Supply Chain Disruption", "Medium", "Operations"); // test data
-addRiskItem("Market Fluctuations", "High", "Finance");
+addRiskItem("Market Fluctuations", "High", "Finance"); // test data
+addRiskItem("Employee Retention", "Low", "HR"); // test data
 
+// Task 5: Implementing Bulk Updates //
+
+function increaseRiskLevels() {  // creates function to increase all risk levels
+    const riskDashboard = document.getElementById('riskDashboard');  // gets risk dashboard info
+    const riskCards = riskDashboard.getElementsByClassName('riskCard'); // gets risk card info
+
+    for (let i = 0; i < riskCards.length; i++) {  // for all risk cards
+        const card = riskCards[i];
+        const riskLevelParagraph = card.querySelector('.riskLevel');  // get risk level from all
+
+        let currentRiskLevel = riskLevelParagraph.textContent.replace("Risk Level: ", "");  // replace the risk level
+
+        if (currentRiskLevel === "Low") {  // if low risk 
+            currentRiskLevel = "Medium"; // change to medium
+            riskLevelParagraph.textContent = `Risk Level: Medium`;  // changes the text to medium
+            card.style.backgroundColor = "#FFFF00";  // changes the background to yellow
+        } else if (currentRiskLevel === "Medium") {  // if risk level if medium
+            currentRiskLevel = "High"; // change to high
+            riskLevelParagraph.textContent = `Risk Level: High`;  // changes text to high
+            card.style.backgroundColor = "#FF0000";  // changes background to red
+        }
+    }
+}
+
+const increaseRiskLevelsButton = document.createElement('button'); // creates button
+increaseRiskLevelsButton.textContent = 'Increase Risk Levels';  // labels button as "Inicrease Risk Levels"
+increaseRiskLevelsButton.classList.add('increaseRiskLevelsButton'); // adds the class
+
+increaseRiskLevelsButton.addEventListener('click', increaseRiskLevels);  // creates listener for the button
+
+riskDashboard.appendChild(increaseRiskLevelsButton); // appends the button
